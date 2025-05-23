@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wero Style</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- EN-TÊTE -->
+    <header class="site-header">
+        <div class="logo">
+            <a href="/"><strong>WERO</strong></a>
+        </div>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <div class="container">
+        <div class="text-section">
+            <h1>
+                ENVOYEZ ET<br>
+                RECEVEZ DE<br>
+                L’ARGENT EN<br>
+                TEMPS RÉEL.<br>
+                OUI, C’EST<br>
+                POSSIBLE !
+            </h1>
+            <a href="/contact" class="cta-button">JE RÉCUPÈRE MES FONDS</a>
+        </div>
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='images/phone.png') }}" alt="Main avec téléphone">
+        </div>
+        <!-- BAS DE PAGE -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 WERO. Tous droits réservés.</p>
+                <nav class="footer-nav">
+                    <a href="#">Mentions légales</a> |
+                    <a href="#">Politique de confidentialité</a> |
+                    <a href="#">Conditions d'utilisation</a>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
